@@ -1,4 +1,4 @@
-export default function ProjectsSidebar({onStartAddProject,projects}){
+export default function ProjectsSidebar({onStartAddProject,projects,onSelectProject,selectedProjectId}){
     return <aside className="w-1/3 px-8 py-16 bg-navy text-beige md:w-72 rounded-r-xl">
         <h2 className="mb-8 font-bold uppercase md:text-xl text-beige">Your Projects</h2>
         <div>
@@ -7,9 +7,24 @@ export default function ProjectsSidebar({onStartAddProject,projects}){
             </button>
         </div>
         <ul className="mt-8q">
-        {projects.map(project=> <li key={project.id}>
-            <button className="w-full text-left px-2 py-1 rounded-sm my-1 text-beige hover:bg-cyan-700">{project.title}</button>
-        </li>  )}
+        {projects.map(project=> {
+            let cssClasses="w-full text-left px-2 py-1 rounded-sm my-1 text-beige hover:bg-teal";
+
+            if(project.id===selectedProjectId){
+                cssClasses += 'bg-cyan-300 text-navy'
+            } else {
+                cssClasses+='text-beige'
+            }
+
+            return ( <li key={project.id}>
+            <button className={cssClasses}
+            onClick={()=>onSelectProject(project.id)}>
+                {project.title}</button>
+        </li> );
+
+        }
+        
+     )}
         </ul>
     </aside>
 }
