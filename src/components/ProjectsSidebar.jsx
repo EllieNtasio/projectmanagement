@@ -6,7 +6,7 @@ export default function ProjectsSidebar({onStartAddProject,projects,onSelectProj
                 + Add Project
             </button>
         </div>
-        <ul className="mt-8q">
+        <ul className="mt-8">
         {projects.map(project=> {
             let cssClasses="w-full text-left px-2 py-1 rounded-sm my-1 text-beige hover:bg-teal";
 
