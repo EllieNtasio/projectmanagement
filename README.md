@@ -10,6 +10,12 @@ Features
 
 
 Project Creation: Create and manage multiple projects.
+
+
 Task Management: Add tasks to individual projects and manage them easily.
+
+
 Task Cleaning: Mark tasks as complete and clean up finished tasks from the project.
+
+
 Responsive Design: Built with Tailwind CSS for a fully responsive experience across desktop and mobile.
